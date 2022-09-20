@@ -1,7 +1,6 @@
 package com.igrakki.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.igrakki.entity.Bank;
 
@@ -15,9 +14,9 @@ public interface BankService {
 
 	List<Bank> getData();
 
-	Optional<Bank> getDataById(int studentId);
+	public Bank getDataById(int studentId);
 
-	Optional<Bank> getDataByGrade(String grade);
+	public Bank getDataByGrade(String grade);
 
 	void updateData(Bank studentId);
 

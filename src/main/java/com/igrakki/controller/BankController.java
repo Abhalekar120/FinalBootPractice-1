@@ -1,7 +1,6 @@
 package com.igrakki.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,42 +16,41 @@ import com.igrakki.service.BankService;
 
 @RestController
 public class BankController {
-
 	@Autowired
 	private BankService service;
-	
+
 	@PostMapping("/bank")
 	public String addData(@RequestBody Bank bank) {
 		service.addData(bank);
 		return "Data Added Sucesfully";
 	}
-	
+
 	@PostMapping("/banks")
-	public List<Bank> addCollection(@RequestBody List<Bank> bank){
+	public List<Bank> addCollection(@RequestBody List<Bank> bank) {
 		return service.addCollection(bank);
 	}
-	
+
 	@GetMapping("/bank")
-	public List<Bank> getData(){
+	public List<Bank> getData() {
 		return service.getData();
 	}
-	
+
 	@GetMapping("/bank/{studentId}")
-	public Optional<Bank> getDataById(@PathVariable int studentId){
+	public Bank getDataById(@PathVariable int studentId) {
 		return service.getDataById(studentId);
 	}
 
 	@GetMapping("/banks/{grade}")
-	public Optional<Bank> getDataByGrade(@PathVariable String grade){
+	public Bank getDataByGrade(@PathVariable String grade) {
 		return service.getDataByGrade(grade);
 	}
-	
+
 	@PutMapping("/bank/{studentId}")
 	public String updateData(@RequestBody Bank studentId) {
-		 service.updateData(studentId);
-		 return "Update Sucessfully";
+		service.updateData(studentId);
+		return "Update Sucessfully";
 	}
-	
+
 	@DeleteMapping("/bank/{studentId}")
 	public String deleteData(@PathVariable Bank studentId) {
 		service.deleteData(studentId);
