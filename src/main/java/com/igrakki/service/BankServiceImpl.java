@@ -1,7 +1,6 @@
 package com.igrakki.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,13 +30,13 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public Optional<Bank> getDataById(int studentId) {
-		return repo.findById(studentId);
+	public Bank getDataById(int studentId) {
+		return repo.findByStudentId(studentId);
 	}
 
 	@Override
-	public Optional<Bank> getDataByGrade(String grade) {
-		return repo.findByGrade(grade);
+	public Bank getDataByGrade(String grade) {
+		return repo.findByGradeId(grade);
 	}
 
 	@Override
