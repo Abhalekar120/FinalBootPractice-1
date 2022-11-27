@@ -48,12 +48,12 @@ public class BankController {
 	@PutMapping("/bank/{studentId}")
 	public String updateData(@RequestBody Bank studentId) {
 		service.updateData(studentId);
-		return "Update Sucessfully";
+		return "Update  data Sucessfully";
 	}
 
 	@DeleteMapping("/bank/{studentId}")
 	public String deleteData(@PathVariable Bank studentId) {
 		service.deleteData(studentId);
-		return "Deleted Sucessfully";
+		return "Deleted record Sucessfully";
 	}
 }
