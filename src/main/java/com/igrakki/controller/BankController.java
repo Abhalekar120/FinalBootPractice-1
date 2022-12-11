@@ -20,7 +20,7 @@ public class BankController {
 	private BankService service;
 
 	@PostMapping("/bank")
-	public String addData(@RequestBody Bank bank) {
+	public String addDatas(@RequestBody Bank bank) {
 		service.addData(bank);
 		return "Data Added Sucesfully";
 	}
